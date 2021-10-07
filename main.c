@@ -21,9 +21,15 @@ int main(void) {
 	exponent = ((data & expMask)>>52) - 1023;
 	fraction = (data & fracMask);
 
+	char signChar;
+	if (sign==1){
+		signChar = '-';
+	}
+	else{
+		signChar = '+';
+	}
 
-
-	printf("Sign: %lX\n",sign);
+	printf("Sign: %c\n",signChar);
 	printf("Base: 2\n");
 	printf("Exponent: 0x%lX\n",exponent);
 	printf("Fraction: 0x%lX\n", fraction);
